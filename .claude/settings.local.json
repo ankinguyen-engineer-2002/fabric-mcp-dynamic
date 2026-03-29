@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -m json.tool)",
+      "Bash(python3 -c \"import json, sys; data = json.load\\(sys.stdin\\); print\\(f''''Total records: {len\\(data\\)}''''\\); [print\\(f\"\"{d[''''layer'''']:3s} {d[''''order'''']} {d[''''table'''']:45s} {d[''''status'''']:10s} {d[''''load'''']:12s}\"\"\\) for d in data]\")",
+      "Bash(python3 -c \"import json, sys; data = json.load\\(sys.stdin\\); print\\(''''Layer breakdown:''''\\); from collections import Counter; print\\(Counter\\(d[''''layer''''] for d in data\\)\\); print\\(''''\\\\nStatus breakdown:''''\\); print\\(Counter\\(d[''''status''''] for d in data\\)\\)\")",
+      "mcp__mcp-registry__search_mcp_registry",
+      "Bash(python3 -c \"import json, sys; d = json.load\\(sys.stdin\\); print\\(json.dumps\\(list\\(d.get\\(''''mcpServers'''', {}\\).keys\\(\\)\\), indent=2\\)\\)\")",
+      "Bash(/Users/MAC/.local/bin/uvx ms-fabric-mcp-server:*)"
+    ]
+  },
+  "mcpServers": {
+    "fabric": {
+      "command": "/Users/MAC/.local/bin/uvx",
+      "args": [
+        "ms-fabric-mcp-server"
+      ],
+      "env": {
+        "MCP_LOG_LEVEL": "INFO"
+      }
+    },
+    "mssql": {
+      "command": "uvx",
+      "args": [
+        "microsoft_sql_server_mcp"
+      ],
+      "env": {
+        "MSSQL_SERVER": "{your-server}.database.windows.net",
+        "MSSQL_DATABASE": "{your-database}",
+        "MSSQL_USER": "{your-user}",
+        "MSSQL_PASSWORD": "{your-password}"
+      }
+    },
+    "powerbi": {
+      "command": "uvx",
+      "args": [
+        "powerbi-modeling-mcp"
+      ],
+      "_note": "Requires Power BI Desktop running locally"
+    }
+  }
+}
