@@ -1,0 +1,21 @@
+[project]
+name = "fabric-mcp-dynamic"
+version = "0.1.0"
+description = "Custom MCP server wrapping Azure REST API + OneLake for Microsoft Fabric"
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp>=3.0",
+    "httpx>=0.27",
+    "pyarrow>=15.0",
+    "pandas>=2.0",
+]
+
+[project.scripts]
+fabric-mcp-dynamic = "fabric_mcp_dynamic.server:mcp.run"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fabric_mcp_dynamic"]
