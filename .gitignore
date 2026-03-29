@@ -5,3 +5,4 @@ dist/
 build/
 *.pyc
 .env
+.claude/settings.local.json
