@@ -1,8 +1,29 @@
 [project]
 name = "fabric-mcp-dynamic"
 version = "0.1.0"
-description = "Custom MCP server wrapping Azure REST API + OneLake for Microsoft Fabric"
+description = "MCP server for Microsoft Fabric — 31 tools: workspace discovery, Delta table reads, pipeline orchestration, data quality, lineage, visualization"
+readme = "README.md"
+license = {text = "MIT"}
 requires-python = ">=3.10"
+authors = [
+    {name = "MAC"},
+]
+keywords = [
+    "mcp", "microsoft-fabric", "onelake", "delta-lake",
+    "data-engineering", "pipeline", "lineage", "claude",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Database",
+]
 dependencies = [
     "fastmcp>=3.0",
     "httpx>=0.27",
@@ -12,6 +33,10 @@ dependencies = [
 
 [project.scripts]
 fabric-mcp-dynamic = "fabric_mcp_dynamic.server:mcp.run"
+
+[project.urls]
+Repository = "https://github.com/ankinguyen-engineer-2002/fabric-mcp-dynamic"
+Issues = "https://github.com/ankinguyen-engineer-2002/fabric-mcp-dynamic/issues"
 
 [build-system]
 requires = ["hatchling"]

@@ -18,8 +18,8 @@ mcp = FastMCP(
     name="fabric-dynamic",
     instructions=(
         "Fabric MCP Dynamic — Custom MCP server for Microsoft Fabric. "
-        "Provides 27 tools: workspace discovery, Delta table reads (OneLake checkpoint replay), "
-        "pipeline orchestration, data quality checks, lineage/metadata, "
+        "Provides 31 tools: workspace discovery, Delta table reads (OneLake checkpoint replay), "
+        "pipeline orchestration, data quality checks, lineage/metadata, lineage discovery & tracing, "
         "D3.js visualization, and environment management. "
         "Auth: uses 'az login' tokens (no Service Principal needed). "
         "Call health_check first to verify connectivity."
@@ -36,4 +36,5 @@ from fabric_mcp_dynamic.tools import (  # noqa: E402, F401
     lineage,
     viz,
     environment,
+    local_lineage,
 )
